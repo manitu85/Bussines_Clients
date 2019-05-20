@@ -1,20 +1,13 @@
 import { createStore, combineReducers, compose } from 'redux'
 import firebase from 'firebase'
 import 'firebase/firestore'
+import { firebaseConfig } from './firebase-config';
 import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase'
 import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 // Reducers
 // @todos
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyB4mZwqJdRsNBB6MzPPgGqyLsr8F1uGgg4',
-  authDomain: 'bussinesclientspanel.firebaseapp.com',
-  databaseURL: 'https://bussinesclientspanel.firebaseio.com',
-  projectId: 'bussinesclientspanel',
-  storageBucket: 'bussinesclientspanel.appspot.com',
-  messagingSenderId: '483123519354',
-  appId: '1:483123519354:web:23624c6021ba0b52'
-};
+
 
 
 // react-redux-firebase config
