@@ -8,8 +8,6 @@ import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 // @todos
 
 
-
-
 // react-redux-firebase config
 const rrfConfig = {
   userProfile: 'users',
