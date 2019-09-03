@@ -5,7 +5,8 @@ export default () => {
   const style = {
     width: "200px",
     margin: "auto",
-    display: "block"
+    display: "block",
+    backgroundColor: "#fff"
   };
 
   return (

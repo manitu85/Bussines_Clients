@@ -1,14 +1,36 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {compose} from 'redux'
+import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import Spinner from '../layout/Spinner'
 
 export class Clients extends Component {
+
+  state = {
+    totalOwed: null
+  }
+
+  // instead UNSAFE_componentWillReceiveProps()
+  static getDerivedStateFromProps(props, state) {
+    const { clients } = props;
+
+    if (clients) {
+      // Add balances
+      const total = clients.reduce((total, client) => {
+        return total + parseFloat(client.balance.toString());
+      }, 0);
+
+      return { totalOwed: total };
+    }
+
+    return null;
+  }
+
   render() {
     const {clients} = this.props;
+    const { totalOwed } = this.state;
 
   if(clients) {
     return (
@@ -17,7 +39,13 @@ export class Clients extends Component {
           <div className='col-md-6'>
             <h2><i className='fas fa-user' />{' '}Clients</h2>
           </div>
-          <div className='col-md-6' />
+          <div className='col-md-6'>
+            <h5 className='text-right text-secondary'>Total Owed{' '}
+              <span className='text-primary'>
+                ${parseFloat(totalOwed).toFixed(2)}
+              </span>
+            </h5>
+          </div>
         </div>
         <table className='table table-striped mt-3'>
           <thead className='thead-inverse'>
