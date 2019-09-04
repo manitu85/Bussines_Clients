@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose } from 'redux'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import 'firebase/firestore'
 import { firebaseConfig } from './firebase-config';
 import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase'
@@ -16,8 +16,10 @@ const rrfConfig = {
 
 // Initialize firebase instance
 firebase.initializeApp(firebaseConfig)
+
 // Initialize firestore
-// const firestore = firebase.firestore() 
+const firestore = firebase.firestore();
+
 
 
 // Add reactReduxFirebase enhancer when making store creator

@@ -29,8 +29,8 @@ export class Clients extends Component {
   }
 
   render() {
-    const {clients} = this.props;
-    const { totalOwed } = this.state;
+  const { clients } = this.props;
+  const { totalOwed } = this.state;
 
   if(clients) {
     return (

@@ -1,12 +1,12 @@
-import React from "react";
-import spinner from "./spinner.gif";
+import React from 'react';
+import spinner from './Ripple-1s-200px.gif';
 
 export default () => {
   const style = {
-    width: "200px",
+    width: "150px",
     margin: "auto",
     display: "block",
-    backgroundColor: "#fff"
+    background: 'none repeat scroll 0 0 transparent'
   };
 
   return (
