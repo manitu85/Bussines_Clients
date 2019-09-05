@@ -144,6 +144,7 @@ ClientDetails.propTypes = {
   firestore: PropTypes.object.isRequired
 }
 
+
 // Get the single client and get it by the ID in the URL
 export default compose(
   firestoreConnect(props => [
