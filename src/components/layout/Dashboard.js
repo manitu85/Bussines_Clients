@@ -1,21 +1,16 @@
-import React from 'react'
-import Clients from '../clients/Clients'
-import Sidebar from './Sidebar'
+import React from 'react';
+import Clients from '../clients/Clients';
+import Sidebar from '../layout/Sidebar';
 
-const Dashboard = () => {
+export default () => {
   return (
-    <div className='row mt-3'>
-      <div className='col-md-10'>
+    <div className="row">
+      <div className="col-md-10">
         <Clients />
       </div>
-
-      <div className='col-md-2'>
+      <div className="col-md-2">
         <Sidebar />
       </div>
-
     </div>
-  )
-}
-
-export default Dashboard
-
+  );
+};

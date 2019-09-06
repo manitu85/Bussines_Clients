@@ -1,51 +1,60 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { compose } from 'redux'
-import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import Spinner from '../layout/Spinner'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import Spinner from '../layout/Spinner';
 
-
-export class EditClient extends Component {
-  
-  // Create refs
-  firstNameInput = React.createRef();
-  lastNameInput = React.createRef();
-  emailInput = React.createRef();
-  phoneInput = React.createRef();
-  balanceInput = React.createRef();
-  
+class EditClient extends Component {
+  constructor(props) {
+    super(props);
+    // Create refs
+    this.firstNameInput = React.createRef();
+    this.lastNameInput = React.createRef();
+    this.emailInput = React.createRef();
+    this.phoneInput = React.createRef();
+    this.balanceInput = React.createRef();
+  }
 
   onSubmit = e => {
     e.preventDefault();
 
     const { client, firestore, history } = this.props;
 
-    // Updated client
+    // Updated Client
     const updClient = {
       firstName: this.firstNameInput.current.value,
       lastName: this.lastNameInput.current.value,
       email: this.emailInput.current.value,
       phone: this.phoneInput.current.value,
-      balance: this.balanceInput.current.value === '' ? 0 : this.balanceInput.current.value
-    }
+      balance:
+        this.balanceInput.current.value === ''
+          ? 0
+          : this.balanceInput.current.value
+    };
 
     // Update client in firestore
-    firestore.update({ collection: 'clients', doc: client.id }, updClient)
-      .then(() => history.push('/')); 
-
-  }
-  
+    firestore
+      .update({ collection: 'clients', doc: client.id }, updClient)
+      .then(history.push('/'));
+  };
 
   render() {
-    // Pulled from firestore
     const { client } = this.props;
-    
-    // if comes from firebase else spinner
+    const { disableBalanceOnEdit } = this.props.settings;
+
     if (client) {
       return (
         <div>
+          <div className="row">
+            <div className="col-md-6">
+              <Link to="/" className="btn btn-link">
+                <i className="fas fa-arrow-circle-left" /> Back To Dashboard
+              </Link>
+            </div>
+          </div>
+
           <div className="card">
             <div className="card-header">Edit Client</div>
             <div className="card-body">
@@ -108,7 +117,7 @@ export class EditClient extends Component {
                     name="balance"
                     ref={this.balanceInput}
                     defaultValue={client.balance}
-
+                    disabled={disableBalanceOnEdit}
                   />
                 </div>
 
@@ -120,39 +129,24 @@ export class EditClient extends Component {
               </form>
             </div>
           </div>
-
-          <div className="row">
-            <div className="col-md-6">
-              <Link to="/" className="btn btn-link">
-                <i className="fas fa-arrow-circle-left" /> Back To Dashboard
-            </Link>
-            </div>
-          </div>
         </div>
-      )
+      );
     } else {
-      return <Spinner />
+      return <Spinner />;
     }
-    
   }
 }
 
-
 EditClient.propTypes = {
   firestore: PropTypes.object.isRequired
-}
+};
 
-// Get the single client and get it by the ID in the URL
 export default compose(
   firestoreConnect(props => [
-    {
-      collection: 'clients',
-      storeAs: 'client',
-      doc: props.match.params.id
-    }
+    { collection: 'clients', storeAs: 'client', doc: props.match.params.id }
   ]),
-  connect(({ firestore: { ordered } }, props) => ({
-    client: ordered.client && ordered.client[0]
+  connect(({ firestore: { ordered }, settings }, props) => ({
+    client: ordered.client && ordered.client[0],
+    settings
   }))
 )(EditClient);
-
