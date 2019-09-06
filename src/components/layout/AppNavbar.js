@@ -50,9 +50,7 @@ class AppNavbar extends Component {
           <div className="collapse navbar-collapse" id="navbarMain">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a href="#!" className="nav-link">
-                  {auth.email}
-                </a>
+                {auth.email}
               </li>
             </ul>
             {isAuthenticated ? (

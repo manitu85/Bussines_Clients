@@ -15,12 +15,15 @@ const rrfConfig = {
   useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
 }
 
+
 // Init firebase instance
 firebase.initializeApp(firebaseConfig)
+
 // Init firestore
 const firestore = firebase.firestore()
 const settings = { timestampsInSnapshots: true }
 firestore.settings(settings)
+
 
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
@@ -35,6 +38,7 @@ const rootReducer = combineReducers({
   settings: settingsReducer
 })
 
+
 // Check for settings in localStorage
 if (localStorage.getItem('settings') == null) {
   // Default settings
@@ -47,6 +51,7 @@ if (localStorage.getItem('settings') == null) {
   // Set to localStorage
   localStorage.setItem('settings', JSON.stringify(defaultSettings))
 }
+
 
 // Create initial state
 const initialState = { settings: JSON.parse(localStorage.getItem('settings')) }
