@@ -34,7 +34,7 @@ class AppNavbar extends Component {
     const { allowRegistration } = this.props.settings
 
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+      <nav className="navbar navbar-expand-md navbar-dark bg-primary">
         <div className="container">
           <Link to="/" className="navbar-brand">
             Bussiness Clients 

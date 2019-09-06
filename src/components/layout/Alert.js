@@ -7,8 +7,8 @@ const Alert = props => {
   return (
     <div
       className={classnames('alert', {
-        'alert-success': messageType === 'success',
-        'alert-danger': messageType === 'error'
+        'alert-success text-center': messageType === 'success',
+        'alert-danger text-center': messageType === 'error'
       })}
     >
       {message}

@@ -4,7 +4,7 @@ import Sidebar from '../layout/Sidebar'
 
 export default () => {
   return (
-    <div className="row">
+    <div className="row mt-5">
       <div className="col-md-10">
         <Clients />
       </div>

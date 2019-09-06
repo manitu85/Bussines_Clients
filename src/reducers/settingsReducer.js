@@ -21,7 +21,10 @@ export default function(state = {}, action) {
         ...state,
         allowRegistration: action.payload
       }
+
     default:
       return state
   }
 }
+
+

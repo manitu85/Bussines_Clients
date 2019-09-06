@@ -31,6 +31,7 @@ const createStoreWithFirebase = compose(
   reduxFirestore(firebase)
 )(createStore)
 
+
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
