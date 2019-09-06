@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import Spinner from '../layout/Spinner';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import Spinner from '../layout/Spinner'
 
 class Clients extends Component {
   state = {
     totalOwed: null
-  };
+  }
 
+   // instead UNSAFE_componentWillReceiveProps()
   static getDerivedStateFromProps(props, state) {
-    const { clients } = props;
+    const { clients } = props
 
     if (clients) {
       // Add balances
       const total = clients.reduce((total, client) => {
-        return total + parseFloat(client.balance.toString());
-      }, 0);
+        return total + parseFloat(client.balance.toString())
+      }, 0)
 
-      return { totalOwed: total };
+      return { totalOwed: total }
     }
 
-    return null;
+    return null
   }
 
   render() {
-    const { clients } = this.props;
-    const { totalOwed } = this.state;
+    const { clients } = this.props
+    const { totalOwed } = this.state
 
     if (clients) {
       return (
@@ -80,9 +81,9 @@ class Clients extends Component {
             </tbody>
           </table>
         </div>
-      );
+      )
     } else {
-      return <Spinner />;
+      return <Spinner />
     }
   }
 }
@@ -90,11 +91,11 @@ class Clients extends Component {
 Clients.propTypes = {
   firestore: PropTypes.object.isRequired,
   clients: PropTypes.array
-};
+}
 
 export default compose(
   firestoreConnect([{ collection: 'clients' }]),
   connect((state, props) => ({
     clients: state.firestore.ordered.clients
   }))
-)(Clients);
+)(Clients)

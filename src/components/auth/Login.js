@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { firebaseConnect } from 'react-redux-firebase';
-import { notifyUser } from '../../actions/notifyActions';
-import Alert from '../layout/Alert';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+import { firebaseConnect } from 'react-redux-firebase'
+import { notifyUser } from '../../actions/notifyActions'
+import Alert from '../layout/Alert'
 
 class Login extends Component {
   state = {
     email: '',
     password: ''
-  };
+  }
 
   onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { firebase, notifyUser } = this.props;
-    const { email, password } = this.state;
+    const { firebase, notifyUser } = this.props
+    const { email, password } = this.state
 
     firebase
       .login({
         email,
         password
       })
-      .catch(err => notifyUser('Invalid Login Credentials', 'error'));
-  };
+      .catch(err => notifyUser('Invalid Login Credentials', 'error'))
+  }
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = e => this.setState({ [e.target.name]: e.target.value })
 
   render() {
-    const { message, messageType } = this.props.notify;
+    const { message, messageType } = this.props.notify
     return (
       <div className="row">
         <div className="col-md-6 mx-auto">
@@ -76,7 +76,7 @@ class Login extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -84,7 +84,7 @@ Login.propTypes = {
   firebase: PropTypes.object.isRequired,
   notify: PropTypes.object.isRequired,
   notifyUser: PropTypes.func.isRequired
-};
+}
 
 export default compose(
   firebaseConnect(),
@@ -94,4 +94,4 @@ export default compose(
     }),
     { notifyUser }
   )
-)(Login);
+)(Login)

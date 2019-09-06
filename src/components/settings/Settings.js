@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import {
   setAllowRegistration,
   setDisableBalanceOnAdd,
   setDisableBalanceOnEdit
-} from '../../actions/settingsActions';
+} from '../../actions/settingsActions'
 
 class Settings extends Component {
   disableBalanceOnAddChange = () => {
-    const { setDisableBalanceOnAdd } = this.props;
-    setDisableBalanceOnAdd();
-  };
+    const { setDisableBalanceOnAdd } = this.props
+    setDisableBalanceOnAdd()
+  }
 
   disableBalanceOnEditChange = () => {
-    const { setDisableBalanceOnEdit } = this.props;
-    setDisableBalanceOnEdit();
-  };
+    const { setDisableBalanceOnEdit } = this.props
+    setDisableBalanceOnEdit()
+  }
 
   allowRegistrationChange = () => {
-    const { setAllowRegistration } = this.props;
-    setAllowRegistration();
-  };
+    const { setAllowRegistration } = this.props
+    setAllowRegistration()
+  }
 
   render() {
     const {
       disableBalanceOnAdd,
       disableBalanceOnEdit,
       allowRegistration
-    } = this.props.settings;
+    } = this.props.settings
 
     return (
       <div>
@@ -78,7 +78,7 @@ class Settings extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -87,7 +87,7 @@ Settings.propTypes = {
   setDisableBalanceOnAdd: PropTypes.func.isRequired,
   setDisableBalanceOnEdit: PropTypes.func.isRequired,
   setAllowRegistration: PropTypes.func.isRequired
-};
+}
 
 export default connect(
   (state, props) => ({
@@ -95,4 +95,4 @@ export default connect(
     settings: state.settings
   }),
   { setAllowRegistration, setDisableBalanceOnAdd, setDisableBalanceOnEdit }
-)(Settings);
+)(Settings)

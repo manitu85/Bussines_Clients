@@ -1,36 +1,37 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { firebaseConnect } from 'react-redux-firebase';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+import { firebaseConnect } from 'react-redux-firebase'
 
 class AppNavbar extends Component {
   state = {
     isAuthenticated: false
-  };
+  }
 
+  // instead UNSAFE_componentWillReceiveProps()
   static getDerivedStateFromProps(props, state) {
-    const { auth } = props;
+    const { auth } = props
 
     if (auth.uid) {
-      return { isAuthenticated: true };
+      return { isAuthenticated: true }
     } else {
-      return { isAuthenticated: false };
+      return { isAuthenticated: false }
     }
   }
 
   onLogoutClick = e => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { firebase } = this.props;
-    firebase.logout();
-  };
+    const { firebase } = this.props
+    firebase.logout()
+  }
 
   render() {
-    const { isAuthenticated } = this.state;
-    const { auth } = this.props;
-    const { allowRegistration } = this.props.settings;
+    const { isAuthenticated } = this.state
+    const { auth } = this.props
+    const { allowRegistration } = this.props.settings
 
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
@@ -98,7 +99,7 @@ class AppNavbar extends Component {
           </div>
         </div>
       </nav>
-    );
+    )
   }
 }
 
@@ -106,7 +107,7 @@ AppNavbar.propTypes = {
   firebase: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   settings: PropTypes.object.isRequired
-};
+}
 
 export default compose(
   firebaseConnect(),
@@ -114,4 +115,4 @@ export default compose(
     auth: state.firebase.auth,
     settings: state.settings
   }))
-)(AppNavbar);
+)(AppNavbar)

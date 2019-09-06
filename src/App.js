@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth'
 
-import { Provider } from 'react-redux';
-import store from './firestore';
+import { Provider } from 'react-redux'
+import store from './firestore'
 
-import AppNavbar from './components/layout/AppNavbar';
-import Dashboard from './components/layout/Dashboard';
-import AddClient from './components/clients/AddClient';
-import EditClient from './components/clients/EditClient';
-import ClientDetails from './components/clients/ClientDetails';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import Settings from './components/settings/Settings';
+import AppNavbar from './components/layout/AppNavbar'
+import Dashboard from './components/layout/Dashboard'
+import AddClient from './components/clients/AddClient'
+import EditClient from './components/clients/EditClient'
+import ClientDetails from './components/clients/ClientDetails'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import Settings from './components/settings/Settings'
 
 import 'bootswatch/dist/lux/bootstrap.min.css'
-import './styles/App.scss';
+import './styles/App.scss'
 
 class App extends Component {
   render() {
@@ -66,8 +66,8 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

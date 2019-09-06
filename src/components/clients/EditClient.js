@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import Spinner from '../layout/Spinner';
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
+import { compose } from "redux"
+import { connect } from "react-redux"
+import { firestoreConnect } from "react-redux-firebase"
+import Spinner from "../layout/Spinner"
 
 class EditClient extends Component {
-  constructor(props) {
-    super(props);
-    // Create refs
-    this.firstNameInput = React.createRef();
-    this.lastNameInput = React.createRef();
-    this.emailInput = React.createRef();
-    this.phoneInput = React.createRef();
-    this.balanceInput = React.createRef();
-  }
+  // Create refs
+  firstNameInput = React.createRef()
+  lastNameInput = React.createRef()
+  emailInput = React.createRef()
+  phoneInput = React.createRef()
+  balanceInput = React.createRef()
 
   onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { client, firestore, history } = this.props;
+    const { client, firestore, history } = this.props
 
     // Updated Client
     const updClient = {
@@ -28,21 +25,20 @@ class EditClient extends Component {
       lastName: this.lastNameInput.current.value,
       email: this.emailInput.current.value,
       phone: this.phoneInput.current.value,
-      balance:
-        this.balanceInput.current.value === ''
-          ? 0
-          : this.balanceInput.current.value
-    };
+      balance: this.balanceInput.current.value === ""
+               ? 0
+               : this.balanceInput.current.value
+    }
 
     // Update client in firestore
     firestore
-      .update({ collection: 'clients', doc: client.id }, updClient)
-      .then(history.push('/'));
-  };
+      .update({ collection: "clients", doc: client.id }, updClient)
+      .then(history.push("/"))
+  }
 
   render() {
-    const { client } = this.props;
-    const { disableBalanceOnEdit } = this.props.settings;
+    const { client } = this.props
+    const { disableBalanceOnEdit } = this.props.settings
 
     if (client) {
       return (
@@ -130,23 +126,23 @@ class EditClient extends Component {
             </div>
           </div>
         </div>
-      );
+      )
     } else {
-      return <Spinner />;
+      return <Spinner />
     }
   }
 }
 
 EditClient.propTypes = {
   firestore: PropTypes.object.isRequired
-};
+}
 
 export default compose(
   firestoreConnect(props => [
-    { collection: 'clients', storeAs: 'client', doc: props.match.params.id }
+    { collection: "clients", storeAs: "client", doc: props.match.params.id }
   ]),
   connect(({ firestore: { ordered }, settings }, props) => ({
     client: ordered.client && ordered.client[0],
     settings
   }))
-)(EditClient);
+)(EditClient)

@@ -61,7 +61,7 @@ class ClientDetails extends Component {
               <input
                 type="submit"
                 value="Update"
-                className="btn btn-outline-dark"
+                className="btn btn-outline-success"
               />
             </div>
           </div>
@@ -75,14 +75,9 @@ class ClientDetails extends Component {
       return (
         <div>
           <div className="row">
-            <div className="col-md-6">
-              <Link to="/" className="btn btn-link">
-                <i className="fas fa-arrow-circle-left" /> Back To Dashboard
-              </Link>
-            </div>
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div className="btn-group float-right">
-                <Link to={`/client/edit/${client.id}`} className="btn btn-dark">
+                <Link to={`/client/edit/${client.id}`} className="btn btn-outline-dark">
                   Edit
                 </Link>
                 <button onClick={this.onDeleteClick} className="btn btn-danger">
@@ -142,6 +137,11 @@ class ClientDetails extends Component {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="col-md-6">
+            <Link to="/" className="btn btn-link">
+              <i className="fas fa-arrow-circle-left" /> Back To Dashboard
+              </Link>
           </div>
         </div>
       )
