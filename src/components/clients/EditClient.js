@@ -43,14 +43,6 @@ class EditClient extends Component {
     if (client) {
       return (
         <div>
-          <div className="row">
-            <div className="col-md-6">
-              <Link to="/" className="btn btn-link">
-                <i className="fas fa-arrow-circle-left" /> Back To Dashboard
-              </Link>
-            </div>
-          </div>
-
           <div className="card">
             <div className="card-header">Edit Client</div>
             <div className="card-body">
@@ -123,6 +115,13 @@ class EditClient extends Component {
                   className="btn btn-primary btn-block"
                 />
               </form>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <Link to="/" className="btn btn-link">
+                <i className="fas fa-arrow-circle-left" /> Back To Dashboard
+              </Link>
             </div>
           </div>
         </div>
