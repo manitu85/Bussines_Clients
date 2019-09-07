@@ -7,6 +7,11 @@ https://bussinesclientspanel.web.app/
 if doesn't work, try...
 https://bussinesclientssreact.netlify.com/
 
+Login:
+
+test@yahoo.com
+test@123
+
 
 Used third party libraries:
 
