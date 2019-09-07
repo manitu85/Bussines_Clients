@@ -17,8 +17,7 @@ import Settings from './components/settings/Settings'
 import 'bootswatch/dist/lux/bootstrap.min.css'
 import './styles/App.scss'
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <Provider store={store}>
         <Router>
@@ -68,6 +67,6 @@ class App extends Component {
       </Provider>
     )
   }
-}
+
 
 export default App
