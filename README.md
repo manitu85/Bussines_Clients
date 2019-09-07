@@ -1,5 +1,6 @@
-Link to project firebase hosting:
-https://bussinesclientspanel.web.app/
+## Link to project firebase hosting:
+
+https://bussinesclientspanel.firebaseapp.com/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
