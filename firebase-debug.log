@@ -13,3 +13,13 @@
 [info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=1038362449&redirect_uri=http%3A%2F%2Flocalhost%3A9005
 [info] 
 [info] Waiting for authentication...
+[debug] [2019-09-07T10:48:04.360Z] ----------------------------------------------------------------------
+[debug] [2019-09-07T10:48:04.362Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2019-09-07T10:48:04.362Z] CLI Version:   7.3.1
+[debug] [2019-09-07T10:48:04.362Z] Platform:      win32
+[debug] [2019-09-07T10:48:04.362Z] Node Version:  v10.13.0
+[debug] [2019-09-07T10:48:04.364Z] Time:          Sat Sep 07 2019 12:48:04 GMT+0200 (Central European Summer Time)
+[debug] [2019-09-07T10:48:04.364Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+

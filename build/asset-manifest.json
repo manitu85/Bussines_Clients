@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e5716ae3.chunk.css",
+    "main.js": "/static/js/main.e25f871f.chunk.js",
+    "main.js.map": "/static/js/main.e25f871f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.34ab3091.js",
+    "runtime~main.js.map": "/static/js/runtime~main.34ab3091.js.map",
+    "static/css/2.9f91707e.chunk.css": "/static/css/2.9f91707e.chunk.css",
+    "static/js/2.f95509da.chunk.js": "/static/js/2.f95509da.chunk.js",
+    "static/js/2.f95509da.chunk.js.map": "/static/js/2.f95509da.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5174fd31682a769bfc7531ab48bd3d29.js": "/precache-manifest.5174fd31682a769bfc7531ab48bd3d29.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.9f91707e.chunk.css.map": "/static/css/2.9f91707e.chunk.css.map",
+    "static/css/main.e5716ae3.chunk.css.map": "/static/css/main.e5716ae3.chunk.css.map",
+    "static/media/Ripple-1s-200px.gif": "/static/media/Ripple-1s-200px.751d2a74.gif"
+  }
+}
