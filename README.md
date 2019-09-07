@@ -22,8 +22,8 @@ Used third party libraries:
     react-script ": "3.1.1",
     redux : "4.0.1",
     redux-auth-wrapper : "2.0.3",
-    redux-firestor ": "0.8.0"
-    
+    redux-firestore ": "0.8.0"
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
