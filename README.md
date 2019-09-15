@@ -1,4 +1,4 @@
-## Link to project firebase hosting:
+## Link to project hosting:
 
 https://react-bussines-clients.netlify.com/
 
