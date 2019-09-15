@@ -36,7 +36,7 @@ class Clients extends Component {
         <div>
           <div className="row">
             <div className="col-md-6">
-              <h2>
+              <h2 className='text-white'>
                 {' '}
                 <i className="fas fa-users" /> Clients{' '}
               </h2>
@@ -44,7 +44,7 @@ class Clients extends Component {
             <div className="col-md-6">
               <h5 className="text-right text-secondary">
                 Total Owed{' '}
-                <span className="text-primary">
+                <span className="text-success">
                   ${parseFloat(totalOwed).toFixed(2)}
                 </span>
               </h5>

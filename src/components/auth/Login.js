@@ -6,6 +6,7 @@ import { firebaseConnect } from 'react-redux-firebase'
 import { notifyUser } from '../../actions/notifyActions'
 import Alert from '../layout/Alert'
 
+
 class Login extends Component {
   state = {
     email: '',
@@ -30,6 +31,7 @@ class Login extends Component {
 
   render() {
     const { message, messageType } = this.props.notify
+    const { email, password } = this.state
     return (
       <div className="centered" style={{ width: '60%' }}>
         <div className="row">
@@ -52,7 +54,7 @@ class Login extends Component {
                       className="form-control"
                       name="email"
                       required
-                      value={this.state.email}
+                      value={email}
                       onChange={this.onChange}
                     />
                   </div>
@@ -63,7 +65,7 @@ class Login extends Component {
                       className="form-control"
                       name="password"
                       required
-                      value={this.state.password}
+                      value={password}
                       onChange={this.onChange}
                     />
                   </div>

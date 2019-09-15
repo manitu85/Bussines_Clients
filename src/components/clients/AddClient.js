@@ -37,8 +37,8 @@ class AddClient extends Component {
     const { disableBalanceOnAdd } = this.props.settings
 
     return (
-      <div>
-        <div className="card">
+      <>
+        <div className="card mt-5">
           <div className="card-header">Add Client</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
@@ -119,7 +119,7 @@ class AddClient extends Component {
             </Link>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }

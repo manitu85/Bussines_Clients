@@ -1,7 +1,10 @@
 
 
 body {
-  background-color: #f0f0f0;
+  background: #2c2c2c;  
+// background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+//  background: linear-gradient(to right, #093028, #237a57);
+  background: linear-gradient(to right, #000000, #2c2c2c, #000000,);
 }
 
 .alert-danger {
@@ -9,11 +12,61 @@ body {
   background-color: #ff2626;
 }
 
+.btn-primary {
+  background-color: #222;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: #fff;
+    background-color: #ff2626;
+    border-color: #010000;                
+}
+}
+
+.btn-outline-secondary {
+  background-color: #ced4da00;
+  border-color: #fff;
+  color: #fff;
+  transition: all .3s ease-in-out;
+
+    &:hover {
+      background: #fff !important;
+      color: #000 !important;
+    }
+}
+
+.shadow {
+	box-shadow: 0 .3rem 1rem rgba(251, 251, 251, 0.42) !important;
+}
+
+
+.btn-link {
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+
+ &:hover {
+	color: #dfdfdf;
+	text-decoration: none;
+ }
+}
+
+.table-striped {
+  background-color: rgba(255, 255, 255, 0.048);
+}
+
 .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 

@@ -17,11 +17,33 @@ import Settings from './components/settings/Settings'
 import 'bootswatch/dist/lux/bootstrap.min.css'
 import './styles/App.scss'
 
+import Particles from 'react-particles-js'
+
+const particleOpt = {
+	  particles: {
+	    number: {
+	      value: 200
+	    },
+	    size: {
+	      value: 2
+	    }
+	  },
+	  interactivity: {
+	    events: {
+	      onhover: {
+	        enable: true,
+	        mode: "repulse"
+	      }
+	    }
+	  }
+}
+
 const App = () => {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Particles params={particleOpt} />
             <AppNavbar />
             <div className="container">
               <Switch>

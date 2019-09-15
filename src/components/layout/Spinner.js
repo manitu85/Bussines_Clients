@@ -1,9 +1,9 @@
 import React from 'react'
-import spinner from './Ripple-1s-200px.gif'
+import spinner from '../../images/Ripple-1s-200px.gif'
 
-export default () => {
+ const Spinner = () => {
   const style = {
-    width: '150px',
+    width: '120px',
     margin: 'auto',
     display: 'block',
     background: 'none repeat scroll 0 0 transparent'
@@ -15,3 +15,5 @@ export default () => {
     </div>
   )
 }
+
+export default Spinner

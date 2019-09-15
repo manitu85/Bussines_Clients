@@ -25,10 +25,7 @@ class EditClient extends Component {
       lastName: this.lastNameInput.current.value,
       email: this.emailInput.current.value,
       phone: this.phoneInput.current.value,
-      balance: this.balanceInput.current.value === ""
-               ? 0
-               : this.balanceInput.current.value
-    }
+      balance: this.balanceInput.current.value === "" ? 0 : this.balanceInput.current.value}
 
     // Update client in firestore
     firestore
@@ -112,7 +109,7 @@ class EditClient extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-primary btn-block"
+                  className="btn btn-outline-primary btn-block"
                 />
               </form>
             </div>
