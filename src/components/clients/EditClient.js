@@ -40,7 +40,7 @@ class EditClient extends Component {
     if (client) {
       return (
         <div>
-          <div className="card">
+          <div className="card mt-5">
             <div className="card-header">Edit Client</div>
             <div className="card-body">
               <form onSubmit={this.onSubmit}>

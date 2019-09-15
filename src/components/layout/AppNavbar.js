@@ -58,20 +58,20 @@ class AppNavbar extends Component {
                
                 {isAuthenticated ? (
                   <li className="nav-item">
-                    <Link to="/" className="nav-link">
+                    <Link to="/" className="nav-link border-animation">
                       Dashboard
                   </Link>
                   </li>
                 ) : null}
                 <li className="nav-item">
-                  <Link to="/settings" className="nav-link">
+                  <Link to="/settings" className="nav-link border-animation">
                     Settings
                   </Link>
                 </li>
                 <li className="nav-item">
                   <a
                     href="#!"
-                    className="nav-link"
+                    className="nav-link border-animation"
                     onClick={this.onLogoutClick}
                   >
                     Logout

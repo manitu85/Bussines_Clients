@@ -45,7 +45,7 @@ class Clients extends Component {
               <h5 className="text-right text-secondary">
                 Total Owed{' '}
                 <span className="text-success">
-                  ${parseFloat(totalOwed).toFixed(2)}
+                  &euro;{parseFloat(totalOwed).toFixed(2)} 
                 </span>
               </h5>
             </div>
@@ -53,7 +53,7 @@ class Clients extends Component {
 
           <table className="table table-striped">
             <thead className="thead-inverse">
-              <tr>
+              <tr className='text-yellow font-weight-bold'>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Balance</th>
@@ -67,7 +67,7 @@ class Clients extends Component {
                     {client.firstName} {client.lastName}
                   </td>
                   <td>{client.email}</td>
-                  <td>${parseFloat(client.balance).toFixed(2)}</td>
+                  <td>&euro;{parseFloat(client.balance).toFixed(2)}</td>
                   <td>
                     <Link
                       to={`/client/${client.id}`}

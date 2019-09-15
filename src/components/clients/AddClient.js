@@ -107,7 +107,7 @@ class AddClient extends Component {
               <input
                 type="submit"
                 value="Submit"
-                className="btn btn-primary btn-block"
+                className="btn btn-outline-primary btn-block"
               />
             </form>
           </div>

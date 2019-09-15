@@ -108,7 +108,7 @@ class ClientDetails extends Component {
                         'text-success': client.balance === 0
                       })}
                     >
-                      ${parseFloat(client.balance).toFixed(2)}
+                      &euro;{parseFloat(client.balance).toFixed(2)}
                     </span>{' '}
                     <small>
                       <a

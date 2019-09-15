@@ -1,26 +1,30 @@
+$alert-danger-bg-color: #ff2626;
 
 
 body {
   background: #2c2c2c;  
-// background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-//  background: linear-gradient(to right, #093028, #237a57);
-  background: linear-gradient(to right, #000000, #2c2c2c, #000000,);
+  background: linear-gradient(to right, #000000, #2c2c2c, #000000);
 }
 
 .alert-danger {
   color: #fff;
-  background-color: #ff2626;
+  background-color: $alert-danger-bg-color;
 }
 
 .btn-primary {
   background-color: #222;
   transition: all .3s ease-in-out;
 
-  &:hover {
-    color: #fff;
-    background-color: #ff2626;
-    border-color: #010000;                
+    &:hover {
+      color: #fff;
+      background-color: $alert-danger-bg-color;
+      border-color: #010000;                
+    }
 }
+
+.btn-danger {
+  background-color: $alert-danger-bg-color;
+  transition: all .3s ease-in-out;
 }
 
 .btn-outline-secondary {
@@ -36,19 +40,27 @@ body {
 }
 
 .shadow {
-	box-shadow: 0 .3rem 1rem rgba(251, 251, 251, 0.42) !important;
+  box-shadow: 0 .3rem 1rem rgba(251, 251, 251, 0.42) !important;
 }
-
 
 .btn-link {
 	font-weight: 400;
 	color: #fff;
 	text-decoration: none;
 
- &:hover {
-	color: #dfdfdf;
-	text-decoration: none;
- }
+  &:hover {
+  	color: #dfdfdf;
+  	text-decoration: none;
+  }
+}
+
+.table {
+    color: #eeeeee;
+}
+
+.text-yellow {
+    color: #f7ff81;
+    // color: #16d47b;
 }
 
 .table-striped {
@@ -62,6 +74,21 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #16d47b; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 canvas {
   display: block;
   position: absolute;
@@ -69,5 +96,18 @@ canvas {
   margin-bottom: 0px;
 }
 
+// Stroke from zero to 100%
+.border-animation::after {
+    content: "";
+    position: relative;
+    top: .5rem;
+    display: block;
+    height: .15rem;
+    background-color: #d6d6d6;
+    width: 0;
+    transition: all 500ms ease;
+}
 
-
+.border-animation:hover::after {
+    width: 100%;
+}

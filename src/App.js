@@ -24,10 +24,20 @@ const particleOpt = {
 	    number: {
 	      value: 200
 	    },
+      color: {
+        value: '#16d47b'
+      },
 	    size: {
 	      value: 2
 	    }
 	  },
+
+    shape: {
+      type: {
+        value: 'polygon'
+      }
+    },
+
 	  interactivity: {
 	    events: {
 	      onhover: {
