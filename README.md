@@ -1,11 +1,6 @@
 ## Link to project firebase hosting:
 
-https://bussinesclientspanel.firebaseapp.com/
-or
-https://bussinesclientspanel.web.app/
-
-if doesn't work, try...
-https://bussinesclientssreact.netlify.com/
+react-bussines-clients.netlify.com
 
 Login:
 
