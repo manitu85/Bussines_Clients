@@ -1,6 +1,6 @@
 ## Link to project firebase hosting:
 
-react-bussines-clients.netlify.com
+https://react-bussines-clients.netlify.com/
 
 Login:
 
