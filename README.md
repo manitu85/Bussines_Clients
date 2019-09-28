@@ -27,7 +27,7 @@ Used third party libraries:
     redux-firestore ": "0.8.0"
 
 
-This projec was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
